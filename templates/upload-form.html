@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div class="custom-file">
+        <input type="file" name="file" class="custom-file-input" id="fileInput" required>
+        <label class="custom-file-label" for="fileInput">Choose file...</label>
+      </div>
+      <div class="text-center">
+        <button type="submit" value="Upload" class="btn btn-primary mt-2">Upload</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+  crossorigin="anonymous">
+</script>
+<script>
+  $("#fileInput").on("change", function () {
+    let fullPath = $(this).val();
+    fileName = fullPath.replace(/^.*[\\\/]/, '')
+    $(this).next(".custom-file-label").html(fileName);
+  });
+</script>
+
+{% endblock %}

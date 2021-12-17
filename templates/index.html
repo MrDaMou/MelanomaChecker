@@ -1,21 +1,27 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Melanoma Checker</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style/bootstrap.css') }}"
+    />
+  </head>
 
-{% block content %}
-<div class="row">
-  <div class="mb-2 col-md-6 offset-md-3">
-    <form action="/infer" method="POST" enctype="multipart/form-data">
-      <div class="input-group">
-        <div class="custom-file">
-          <input type="file" name="file" accept=".jpg, .jpeg" class="custom-file-input" id="inputGroupFile"
-            aria-describedby="inputGroupFileAddon04">
-          <label class="custom-file-label" for="inputGroupFile">Choose file</label>
-        </div>
-        <div class="input-group-append">
-          <input type="submit" value="Upload"  class="btn btn-outline-secondary" type="button"
-            id="inputGroupFileAddon04" /> 
+  <body cz-shortcut-listen="true">
+    <div class="row">
+      <div class="col-sm-8 offset-sm-2">
+        <div class="pt-md-5 px-2 text-center">
+          <h1 class="display-4">Melanoma Checker</h1>
+          <p class="lead">This Site uses a DenseNet121 Classifier trained on the <a target="_blank" rel="noopener noreferrer" href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T">HAM10000 dataset.</a><br>
+                          It will determine the probability of the uploaded image of being a melanoma.
         </div>
       </div>
-    </form>
-  </div>
-</div>
-{% endblock %}
+    </div>
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
