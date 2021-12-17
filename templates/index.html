@@ -10,7 +10,7 @@
     />
   </head>
 
-  <body cz-shortcut-listen="true">
+  <body class= "d-flex flex-column min-vh-100" cz-shortcut-listen="true">
     <div class="row">
       <div class="col-sm-8 offset-sm-2">
         <div class="pt-md-5 px-2 text-center">
@@ -23,5 +23,14 @@
     <div class="container">
       {% block content %}{% endblock %}
     </div>
+    <footer class="mt-auto">
+      <div class="row">
+        <div class="col-sm-6 offset-sm-3 my-5 text-center">
+          <p class="text-muted text-center">
+            This Interface is inspired by and uses parts of the <a target="_blank" rel="noopener noreferrer" href="https://github.com/imadtoubal/Pytorch-Flask-Starter"> Pytorch-Flask-Starter Project by imadtoubal.</a>
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
